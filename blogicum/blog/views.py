@@ -32,7 +32,7 @@ def post_detail(request, id):
         category__is_published=True,
         pub_date__lte=timezone.now()
     )
-    
+
     context = {'post': post}
     return render(request, template, context)
 
@@ -62,4 +62,3 @@ def category_posts(request, category_slug):
         'post_list': post_list
     }
     return render(request, template, context)
-    
