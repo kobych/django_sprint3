@@ -6,7 +6,7 @@ User = get_user_model()
 
 class PublishedModel(models.Model):
     """Абстрактная модель. Добавляет флаг is_published и created_at."""
-    
+
     is_published = models.BooleanField(
         default=True,
         verbose_name='Опубликовано',
@@ -23,7 +23,7 @@ class PublishedModel(models.Model):
 
 class Category(PublishedModel):
     """Модель категории."""
-    
+
     title = models.CharField(
         max_length=256,
         verbose_name='Заголовок'
@@ -48,7 +48,7 @@ class Category(PublishedModel):
 
 class Location(PublishedModel):
     """Модель местоположения."""
-    
+
     name = models.CharField(
         max_length=256,
         verbose_name='Название места'
@@ -64,7 +64,7 @@ class Location(PublishedModel):
 
 class Post(PublishedModel):
     """Модель публикации."""
-    
+
     title = models.CharField(
         max_length=256,
         verbose_name='Заголовок'
@@ -102,3 +102,4 @@ class Post(PublishedModel):
 
     def __str__(self):
         return self.title
+    
