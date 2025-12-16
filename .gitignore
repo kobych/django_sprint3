@@ -71,6 +71,9 @@ instance/
 # Sphinx documentation
 docs/_build/
 
+# Static files (исключаем из репозитория)
+/blogicum/static_files/
+
 # PyBuilder
 target/
 
