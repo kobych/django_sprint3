@@ -47,7 +47,14 @@ def category_posts(request, category_slug):
         is_published=True
     )
 
-    post_list = get_published_posts().filter(category=category)
+    post_list = category.posts.select_related(
+        'author',
+        'location',
+        'category'
+    ).filter(
+        is_published=True,
+        pub_date__lte=timezone.now()
+    )
 
     context = {
         'category': category,
